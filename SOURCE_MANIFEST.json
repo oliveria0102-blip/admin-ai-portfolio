@@ -1,0 +1,55 @@
+{
+  "snapshot": "2026-11-01",
+  "files": [
+    {
+      "path": "skills/long-task-orchestrator/scripts/append_event.py",
+      "sha256": "40594cbba3a8b445ed3b6afc68cc88749663c7f96ea387dbb2e0cc2caf770585",
+      "component": "administrative-assistant-generic-components"
+    },
+    {
+      "path": "skills/long-task-orchestrator/scripts/claim_batch.py",
+      "sha256": "c7ea9aadce401a002fe2c827ebc64874a0539343083ddaa9cb2f77d1aa21ce85",
+      "component": "administrative-assistant-generic-components"
+    },
+    {
+      "path": "skills/long-task-orchestrator/scripts/enumerate_work_items.py",
+      "sha256": "447dabd61e4b4f5c8023929a584d18c64c4c5b3780769cd1c27807bfdae0e6c2",
+      "component": "administrative-assistant-generic-components"
+    },
+    {
+      "path": "skills/long-task-orchestrator/scripts/init_task_package.py",
+      "sha256": "f684dfc37189eb2e124dbda0b13cb02f33839f34dd3cbc3022a681766a8bbe21",
+      "component": "administrative-assistant-generic-components"
+    },
+    {
+      "path": "skills/long-task-orchestrator/scripts/reconcile_task.py",
+      "sha256": "9fda6de13277cf2253d5cbac3deeb0adeab28083e81107a0d3c5f168b121a75a",
+      "component": "administrative-assistant-generic-components"
+    },
+    {
+      "path": "skills/long-task-orchestrator/scripts/resume_task.py",
+      "sha256": "d68729b76af82cb43864adda257f0a710e8d168b90a02e102cc1dc3fcfe6b28d",
+      "component": "administrative-assistant-generic-components"
+    },
+    {
+      "path": "skills/long-task-orchestrator/scripts/update_item_state.py",
+      "sha256": "e89367f9116e95b395a22e7d8f8d3f5ab82e852170a09efe2d91a4221c4a2e73",
+      "component": "administrative-assistant-generic-components"
+    },
+    {
+      "path": "core/adapters/task_state_store.py",
+      "sha256": "e6e060f931ec282b1e10b4bbae7f6e8d1e8c295f2be901ec1c0e596d0786cba0",
+      "component": "administrative-assistant-generic-components"
+    },
+    {
+      "path": "core/policies/side_effect_classifier.py",
+      "sha256": "f9bb78c3ff0d4a938ce15a7808067c6833eacbc2e6edd08a66ce2085d92aefaa",
+      "component": "administrative-assistant-generic-components"
+    },
+    {
+      "path": "core/protocols/task_state_v1.schema.json",
+      "sha256": "ce70e680b557e74cd54fb27e773d827ea02903c446cd5e0ca8830e871053428c",
+      "component": "administrative-assistant-generic-components"
+    }
+  ]
+}

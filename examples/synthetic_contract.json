@@ -1,0 +1,14 @@
+{
+  "state": "CONFIRMED",
+  "objective": "整理三个虚构文档的标题和主题，形成示例清单",
+  "scope": {
+    "item_count": 3,
+    "item_type": "DOCUMENT_SECTION",
+    "owner_skill": "demo-document-review"
+  },
+  "routing": {
+    "owner_skill": "demo-document-review",
+    "orchestration_required": true
+  },
+  "data_class": "SYNTHETIC_EXAMPLE"
+}

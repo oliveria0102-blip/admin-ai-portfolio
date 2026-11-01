@@ -1,0 +1,131 @@
+{
+  "schema_version": "1.0",
+  "type": "object",
+  "required": ["schema_version", "task_id", "state_version", "status", "routing", "runtime"],
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "task_id": {"type": "string"},
+    "project_id": {"type": ["string", "null"]},
+    "conversation_id": {"type": ["string", "null"]},
+    "state_version": {"type": "integer"},
+    "status": {"enum": ["ACTIVE", "WAITING_USER", "RUNNING", "COMMIT_PENDING", "BLOCKED", "STALLED", "COMPLETED", "REOPENED", "CANCELLED", "EXPIRED"]},
+    "routing": {
+      "type": "object",
+      "properties": {
+        "task_family": {"type": "string"},
+        "workflow_pattern": {"type": "string"},
+        "owner_skill": {"type": ["string", "null"]},
+        "orchestration_required": {"type": "boolean"}
+      }
+    },
+    "complexity": {"enum": ["SIMPLE", "COMPLEX", "OPEN_ENDED"]},
+    "verification": {
+      "type": "object",
+      "properties": {
+        "policy": {"type": "string"},
+        "target": {"type": "string"},
+        "scopes": {"type": "array"}
+      }
+    },
+    "permissions": {
+      "type": "object",
+      "properties": {
+        "alumni_read": {"type": "boolean"},
+        "asset_read": {"type": "boolean"},
+        "working_write": {"type": "boolean"},
+        "formal_write": {"type": "boolean"},
+        "external_action": {"type": "boolean"}
+      }
+    },
+    "planning": {
+      "type": "object",
+      "properties": {
+        "required": {"type": "boolean"},
+        "status": {"enum": ["NOT_STARTED", "DRAFTED", "VALIDATED", "EXECUTING", "COMPLETED"]},
+        "plan_id": {"type": ["string", "null"]}
+      }
+    },
+    "execution_scale": {
+      "type": "object",
+      "properties": {
+        "requested": {"enum": ["PILOT", "PARTIAL", "FULL"]},
+        "current": {"enum": ["PILOT", "PARTIAL", "FULL"]},
+        "pilot_validated": {"type": "boolean"}
+      }
+    },
+    "execution_phase": {
+      "enum": ["NONE", "DEFINE", "DISCOVER", "EXPAND", "VERIFY", "CONSOLIDATE", "PILOT", "FULL_EXECUTION"]
+    },
+    "required_capabilities": {
+      "type": "object",
+      "properties": {
+        "items": {"type": "array"},
+        "completed": {"type": "array"}
+      }
+    },
+    "source_plan": {
+      "type": "object",
+      "properties": {
+        "channels": {"type": "array"},
+        "attempted": {"type": "array"},
+        "completed": {"type": "array"}
+      }
+    },
+    "coverage": {
+      "type": "object",
+      "properties": {
+        "candidates": {
+          "type": "object",
+          "properties": {
+            "discovered": {"type": "integer"},
+            "verified": {"type": "integer"},
+            "accepted": {"type": "integer"},
+            "rejected": {"type": "integer"},
+            "unresolved": {"type": "integer"}
+          }
+        },
+        "batches": {
+          "type": "object",
+          "properties": {"completed": {"type": "integer"}, "no_new_streak": {"type": "integer"}}
+        },
+        "saturation_required_batches": {"type": "integer"}
+      }
+    },
+    "completion": {
+      "type": "object",
+      "properties": {
+        "contract": {"type": "object"},
+        "satisfied": {"type": "boolean"},
+        "completion_status": {"enum": ["PENDING", "COMPLETE", "INCOMPLETE"]}
+      }
+    },
+    "requirement_manifest": {
+      "type": ["object", "null"],
+      "description": "Harness-owned 需求基线（requirement_manifest_v1.schema.json）；Agent 不得修改"
+    },
+    "continuation_of": {
+      "type": ["string", "null"],
+      "description": "语义延续来源任务（REOPENED 路径；前任务保持 COMPLETED 记录）"
+    },
+    "interaction": {
+      "type": "object",
+      "properties": {
+        "confirmation_budget_total": {"type": "integer"},
+        "confirmation_budget_used": {"type": "integer"},
+        "mode": {"type": "string"},
+        "pending_decision": {"type": ["object", "null"]}
+      }
+    },
+    "runtime": {
+      "type": "object",
+      "properties": {
+        "current_turn": {"type": "integer"},
+        "policy_version": {"type": "string"},
+        "last_transition_id": {"type": ["string", "null"]},
+        "stop_block_count": {"type": "integer"},
+        "degraded": {"type": "boolean"},
+        "updated_at": {"type": "string"}
+      }
+    }
+  }
+}
